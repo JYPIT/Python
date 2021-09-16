@@ -1,0 +1,8 @@
+django-bootstrap-v5
+#python -m pip install django-debug-toolbar
+wheel
+pandas
+folium
+geocoder
+#python -m pip install Pillow
+scipy==1.4.1

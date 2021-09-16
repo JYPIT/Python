@@ -1,0 +1,57 @@
+{% block content %}
+  {% load static %}
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+    <head>
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <meta name="description" content=""/>
+      <meta name="author" content=""/>
+      <title>main_page</title>
+      <link rel="icon" type="image/x-icon" href="{% static 'assets/silver.ico' %}"/>
+      <ul p="p" align="right" id="top-nav">
+        {% if not user.is_authenticated %}
+            <a class="nav-link site-heading-lower" href="{% url "signup" %}">회원가입</a>
+        {% else %}
+            <a class="nav-link site-heading-lower" href="{% url "profile" %}">{{ user.username }}'s 프로필<a/>
+              <a class="nav-link site-heading-lower" href="{% url "logout" %}">로그아웃</a>
+          {% endif %}
+        </p>
+      </ul>
+      <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+      <!-- Google fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"/>
+      <!-- Core theme CSS (includes Bootstrap)-->
+      <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+    </head>
+
+    <body>
+      <header>
+        <style>
+          p {
+            text-transform: none;
+          }
+        </style>
+        <h1 class="site-heading text-center text-faded d-none d-lg-block">
+          <span class="site-heading-upper text-primary mb-3">
+            <p>Senior Traffic Accident Information Service System (STAISS)</p>
+          </span>
+          <a class="nav-link site-heading-lower" href="{% url "root" %}">노인교통사고 정보 제공 시스템</a>
+        </h1>
+      </header>
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container" style="color:lightgray">
+
+          <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+              {{ form.as_table }}
+            </table>
+            <input type="submit"/>
+          </form>
+
+        {% endblock %}

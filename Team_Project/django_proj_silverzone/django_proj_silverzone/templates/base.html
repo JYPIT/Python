@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>STAISS</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/silver.ico' %}"/>
+    <ul p="p" align="right" id="top-nav">
+      {% if not user.is_authenticated %}
+          <a class="nav-link site-heading-lower" href="{% url "signup" %}">회원가입</a>
+          <a class="nav-link site-heading-lower" href="{% url "login" %}">로그인</a>
+      {% else %}
+          <a class="nav-link site-heading-lower" href="{% url "profile" %}">{{ user.username }}'s 프로필<a/>
+            <a class="nav-link site-heading-lower" href="{% url "logout" %}">로그아웃</a>
+      {% endif %}
+      </p>
+    </ul>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <header>
+      <style>
+        p {
+          text-transform: none;
+        }
+      </style>
+      <h1 class="site-heading text-center text-faded d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">
+          <p>Senior Traffic Accident Information Service System (STAISS)</p>
+        </span>
+        <a class="site-heading-lower nav-link" href="{% url "root" %}">노인교통사고 정보 제공 시스템</a>
+      </h1>
+    </header>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">STAISS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="{% url "purpose" %}">STAISS 소개</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="{% url "analysis" %}">노인사고 통계분석</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="{% url "rank" %}">시도별 노인보행사고 지역 순위(추후 예정)</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="{% url "recommend" %}">전국 노인보호구역 추천 지도</a></li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase" href="{% url "qna_list" %}">문의 게시판</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; 올드보이</p>
+      </div>
+    </footer>
+  </body>
+
+</html>

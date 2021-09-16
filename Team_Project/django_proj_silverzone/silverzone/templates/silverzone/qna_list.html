@@ -1,0 +1,35 @@
+{% extends "silverzone/layout.html" %}
+
+{% block content %}
+
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-3">
+                <h2 class="section-heading mb-2">
+                  <h2 style="color:black";>문의 내용</h2>
+                  <a href="post/" style="color:black">글 작성</a>
+                  <div class="row">
+                  {% for qna in qna_list %}
+                  <div class="card-body">
+                  <a href="{% url "qna_content" qna.pk %}" class="btn btn-primary">{{qna.pk}}. {{qna.title}}</a>
+                  <br><span style="color:black">작성자: {{ qna.writer }}<br>작성일: {{qna.created_at}}<span>
+                  </div>
+                  <br>
+                  {% endfor %}                   
+                
+                </p>
+              </div>
+            </div>
+          </div>
+          <br>
+        
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

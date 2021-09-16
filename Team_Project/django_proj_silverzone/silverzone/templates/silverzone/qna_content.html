@@ -1,0 +1,59 @@
+{% extends "silverzone/layout.html" %}
+
+{% block content %}
+
+  <section class="page-section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner bg-faded text-center rounded">
+            <class="section-heading mb-5">
+              <h5 span="span" class="section-heading-lower">제목 :
+                {{ qna.title }}</span></h5><br>
+            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+              <li class="list-unstyled-item list-hours-item d-flex">
+                작성자
+                <span class="ms-auto">{{ qna.writer}}</span>
+              </li>
+              <li class="list-unstyled-item list-hours-item d-flex">
+                문의날짜
+                <span class="ms-auto">{{ qna.created_at }}</span>
+              </li>
+              <li class="list-unstyled-item list-hours-item d-flex">
+                <span class="ms-auto"><img src="{{ qna.image.url }}" style="max-width: 100%;"/></span>
+              </li>
+              <li class="list-unstyled-item list-hours-item d-flex">
+                content
+                <span class="ms-auto">{{ qna.content }}</span>
+              </li>
+              <li class="list-unstyled-item list-hours-item d-flex">
+                이메일
+                <span class="ms-auto">{{ qna.email }}</span>
+              </li>
+              <a p align="right" style="color:black" class="nav-link" href="edit/">글 수정</a>
+            </a>
+          </div>
+          <br>
+          <h4 style="color:black">댓글</h4 span>
+          <a style="text-decoration:none; color:black;" href="{% url "review_new" qna.pk %}">댓글 작성</a>
+        <div id="review-list"></div>
+
+        <ul>
+          {% for review in review_list %}
+            <li>
+              {{ review.message }}
+              |
+              {{ review.author }}
+              |
+              {{ review.created_at }}
+              <a style="text-decoration:none; color:blue;" href="/silverzone/qnas/{{ qna.pk }}/reviews/{{review.pk}}/edit/">수정</a>
+              <a style="text-decoration:none; color:blue;" href="/silverzone/qnas/{{ qna.pk }}/reviews/{{review.pk}}/delete/">삭제</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

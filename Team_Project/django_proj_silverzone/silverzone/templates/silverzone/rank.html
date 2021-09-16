@@ -1,0 +1,132 @@
+{% extends "silverzone/layout.html" %}
+{% load static %}
+{% block content %}
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex ms-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">서울특별시</span>
+                <span class="section-heading-lower">서울6호선 이태원역</span>
+              </h2>
+            </div>
+          </div>
+          <img
+            class="
+              product-item-img
+              mx-auto
+              d-flex
+              rounded
+              img-fluid
+              mb-3 mb-lg-0
+            "
+            src="{% static 'assets/img/캡처15.jpg' %}"
+            alt="..."
+          />
+          <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">
+                6호선 이태원역 주변에서 3년간 발생한 보행자 교통사고는 39건으로
+                시간대 별로는 야간시간대(00~06시)에 발생한 사고가 29건으로 74%를
+                차지하였고 가해자의 차량용도별로 보면 택시인 경우가 25건으로
+                64%를 차지하며 가장 많았다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex me-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">부산광역시</span>
+                <span class="section-heading-lower"
+                  >부산광역시 동구 좌천동(좌천동주민센터 부근)</span
+                >
+              </h2>
+            </div>
+          </div>
+          <img
+            class="
+              product-item-img
+              mx-auto
+              d-flex
+              rounded
+              img-fluid
+              mb-3 mb-lg-0
+            "
+            src="{% static 'assets/img/busan.jpg' %}"
+            alt="..."
+          />
+          <div class="product-item-description d-flex ms-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">
+                2020년 한해동안 보행노인 사고건수 9건, 사상자수 15명(중상자6명,
+                경상자9명)으로 근처 고령자들이 자주 왕래하는 한의원, 약국등이
+                주변에 위치해 있다. 또한 이구역 고령자 인구분포는 40%(3207명)로
+                차기 노인 보호구역 후보군으로 선정하였다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex ms-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">대구광역시</span>
+                <span class="section-heading-lower"
+                  >대구광역시 북구 칠성동1가(칠성교네거리 부근)</span
+                >
+              </h2>
+            </div>
+          </div>
+          <img
+            class="
+              product-item-img
+              mx-auto
+              d-flex
+              rounded
+              img-fluid
+              mb-3 mb-lg-0
+            "
+            src="{% static 'assets/img/degu.jpg' %}"
+            alt="..."
+          />
+          <div class="product-item-description d-flex me-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">
+                실버존은 고령 보행자의 통행량의 많은 곳에 설정해 차량속도 제한을
+                낮추는 등의 방식으로 운영된다. 하지만 실상을 들여다 보면 위
+                지도의 칠성시장역 처럼 시장골목거리 처럼 어르신들이 많이 다니는
+                장소인데도 실버존이 없는 곳이 적지 않다. 이렇다 보니 교통사고도
+                자주 발생한다. 현장조사 결과 거리에 늘어선 상점을 따라 이어지던
+                보도가 블록이 나뉘는 지점에서 갑자기 끊겨있는 구간이 종종 있어
+                캐리어에 물건을 싣고 시장을 거닐던 시민들은 자연스레 이면도로로
+                내려와 차량과 섞여 걷는다. 전통시장 특성상 상당수가 머리가
+                희끗한 어르신 보행자였지만, 이곳에 노인보호구역(실버존)등 고령
+                보행자를 보호하는 장치는 보이지 않았다. 이 때문에 상대적으로
+                반응 속도가 더딘 고령 보행자들은 차와 부딪칠 수 있는 위험에
+                고스란히 노출되고 있는 실정이다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </body>
+</html>
+
+{% endblock %}
